@@ -3,7 +3,7 @@ var chai = require('chai');
 var expect = chai.expect;
 var fs = require('fs');
 
-var getUniqueSelector = require('../src/getUniqueSelector.js').init();
+var getUniqueSelector = require('../src/get-unique-selector.js').init();
 
 describe('Get Unique Selector', () => {
   var htmlString = fs.readFileSync('./test/fixtures/example.html', 'utf8');
