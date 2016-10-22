@@ -10,7 +10,7 @@ describe('Get Unique Selector', () => {
   var $html = $(htmlString);
 
   it('should get the unique selector for normal LI', () => {
-    expect($.getUniqueSelector($html.find('.test1'))).to.equal('body > div:nth-child(0) > div:nth-child(0) > ul:nth-child(0) > li:nth-child(1)');
+    expect($.getUniqueSelector($html.find('.test1'))).to.equal('body > div:nth-child(1) > div:nth-child(1) > ul:nth-child(1) > li:nth-child(2)');
   });
 
   it('should get the unique selector for element with ID', () => {
@@ -18,7 +18,7 @@ describe('Get Unique Selector', () => {
   });
 
   it('should get the unique selector for element with ID ANCESTOR', () => {
-    expect($.getUniqueSelector($html.find('.test3'))).to.equal('#testId > span:nth-child(2) > span:nth-child(0)');
+    expect($.getUniqueSelector($html.find('.test3'))).to.equal('#testId > span:nth-child(3) > span:nth-child(1)');
   });
 
   it('should get the unique selector for BODY', () => {
@@ -30,6 +30,6 @@ describe('Get Unique Selector', () => {
   });
 
   it('should get the unique selector for span under multiple anchestors with an id', () => {
-    expect($.getUniqueSelector($html.find('.test6'))).to.equal('#my-span > span:nth-child(0) > em:nth-child(0)');
+    expect($.getUniqueSelector($html.find('.test6'))).to.equal('#my-span > span:nth-child(1) > em:nth-child(1)');
   });
 });
