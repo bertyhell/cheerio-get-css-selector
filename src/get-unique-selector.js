@@ -29,7 +29,14 @@ module.exports = {
         if (tagName === 'body') {
           return tagName;
         } else {
-          return el.get(0).tagName + (el.index() === 0 ? '' : ':nth-child(' + (el.index() + 1) + ')');
+          if (el.siblings().length === 0) {
+            return el.get(0).tagName;
+          }
+          if (el.index() === 0) {
+            return el.get(0).tagName + ':first-child';
+          } else {
+            return el.get(0).tagName+ ':nth-child(' + (el.index() + 1) + ')';
+          }
         }
       }
     }
