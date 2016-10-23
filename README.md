@@ -10,7 +10,8 @@ When searching through the ancestors while building the selector the algorithm w
   <body> 
     <div id="my-div"> 
       <span> 
-        <span class="test-class"></span> 
+        <span class="test-class"></span>
+        <span></span>
       </span> 
     </div> 
   </body> 
@@ -25,7 +26,7 @@ var getUniqueSelector = require('../src/get-unique-selector.js').init();
 var $html = $('<html><body><div id="my-div"><span><span class="test-class"></span></span></div></body></html>');
 
 var element = $html.find('.test-class');
-console.log($.getUniqueSelector(element)); // outputs: #my-div > span:nth-child(0) > span:nth-child(0)
+console.log($.getUniqueSelector(element)); // outputs:#my-div > span > span:first-child
 ```
 
 

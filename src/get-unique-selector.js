@@ -28,16 +28,17 @@ module.exports = {
         var tagName = el.get(0).tagName;
         if (tagName === 'body') {
           return tagName;
-        } else {
-          if (el.siblings().length === 0) {
-            return el.get(0).tagName;
-          }
-          if (el.index() === 0) {
-            return el.get(0).tagName + ':first-child';
-          } else {
-            return el.get(0).tagName+ ':nth-child(' + (el.index() + 1) + ')';
-          }
         }
+        if (el.siblings().length === 0) {
+          return el.get(0).tagName;
+        }
+        if (el.index() === 0) {
+          return el.get(0).tagName + ':first-child';
+        }
+        if (el.index() === el.siblings().length){
+          return el.get(0).tagName + ':last-child';
+        }
+        return el.get(0).tagName+ ':nth-child(' + (el.index() + 1) + ')';
       }
     }
   }

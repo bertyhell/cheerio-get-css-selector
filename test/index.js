@@ -45,4 +45,8 @@ describe('Get Unique Selector', () => {
   it('should get the unique selector for the first span', () => {
     compareElementsForSelector($html, '.test7');
   });
+
+  it('should get the unique selector using the :last-child selector', () => {
+    compareElementsForSelector($html, '.test8');
+  });
 });
