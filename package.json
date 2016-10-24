@@ -1,6 +1,6 @@
 {
   "name": "cheerio-get-css-selector",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "description": "gets a unique selector for this element",
   "main": "./src/get-unique-selector.js",
   "scripts": {
