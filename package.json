@@ -4,8 +4,7 @@
   "description": "gets a unique selector for this element",
   "main": "./src/get-unique-selector.js",
   "scripts": {
-    "test": "istanbul cover --report html node_modules/mocha/bin/_mocha test/**/*.js",
-    "lint": "eslint src test"
+    "test": "istanbul cover --report html node_modules/mocha/bin/_mocha test/**/*.js"
   },
   "files": [
     "src"
