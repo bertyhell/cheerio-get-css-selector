@@ -38,6 +38,7 @@
     "eslint": "^3.6.0",
     "eslint-config-airbnb": "^12.0.0",
     "istanbul": "^1.0.0-alpha",
-    "mocha": "^3.0.2"
+    "mocha": "^3.0.2",
+    "cheerio": "^1.0.0-rc.2"
   }
 }
