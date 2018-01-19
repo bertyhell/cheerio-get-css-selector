@@ -16,6 +16,8 @@ function compareElementsForSelector($, classSelector) {
 describe('Get Unique Selector', () => {
   var htmlString = fs.readFileSync('./test/fixtures/example.html', 'utf8');
   var $ = cheerio.load(htmlString);
+  
+  GetUniqueSelector.init($);
 
   it('should get the unique selector for normal LI', () => {
 
