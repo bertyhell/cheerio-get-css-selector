@@ -3,6 +3,10 @@ module.exports = {
     $.prototype.getUniqueSelector = function () {
       var el = this;
       var parents = el.parents();
+      if (!parents[0]) {
+        // Element doesn't have any parents
+        return ':root';
+      }
       var selector = getElementSelector(el);
       var i = 0;
       var elementSelector;

@@ -3,7 +3,7 @@ var chai = require('chai');
 var expect = chai.expect;
 var fs = require('fs');
 
-var GetUniqueSelector = require('../src/get-unique-selector.js')
+var GetUniqueSelector = require('../src/get-unique-selector.js');
 
 function compareElementsForSelector($, classSelector) {
   var findUsingClass          = $(classSelector);
@@ -15,12 +15,14 @@ function compareElementsForSelector($, classSelector) {
 
 describe('Get Unique Selector', () => {
   var htmlString = fs.readFileSync('./test/fixtures/example.html', 'utf8');
+  var htmlString2 = fs.readFileSync('./test/fixtures/example2.html', 'utf8');
   var $ = cheerio.load(htmlString);
-  
+  var $2 = cheerio.load(htmlString2);
+
   GetUniqueSelector.init($);
+  GetUniqueSelector.init($2);
 
   it('should get the unique selector for normal LI', () => {
-
     compareElementsForSelector($, '.test1');
   });
 
@@ -50,5 +52,11 @@ describe('Get Unique Selector', () => {
 
   it('should get the unique selector using the :last-child selector', () => {
     compareElementsForSelector($, '.test8');
+  });
+
+  it('should get the unique selector if element doesn\'t have any parents', () => {
+    var findUsingUniqueSelector = $2.root().getUniqueSelector($2('.test9'));
+    // The :root selector isn't supported by cheerio yet
+    expect(findUsingUniqueSelector).to.equal(':root');
   });
 });
