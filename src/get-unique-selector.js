@@ -1,9 +1,7 @@
-var $ = require('cheerio');
-
 module.exports = {
-  init: function() {
-
-    $.getUniqueSelector = function (el) {
+  init: function($) {
+    $.prototype.getUniqueSelector = function () {
+      var el = this;
       var parents = el.parents();
       var selector = getElementSelector(el);
       var i = 0;

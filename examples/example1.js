@@ -1,9 +1,10 @@
-var $ = require('cheerio');
+var cheerio = require('cheerio');
+var GetUniqueSelector = require('../src/get-unique-selector.js');
 
-var getUniqueSelector = require('../src/get-unique-selector.js').init();
+var $ = cheerio.load('<html><body><div id="my-div"><span><span class="test-class"></span><span></span></span></div></body></html>');
 
-var $html = $('<html><body><div id="my-div"><span><span class="test-class"></span><span></span></span></div></body></html>');
+GetUniqueSelector.init($);
 
+var $element = $('.test-class');
 
-var element = $html.find('.test-class');
-console.log($.getUniqueSelector(element)); // outputs: #my-div > span > span:first-child
+console.log($element.getUniqueSelector()); // outputs: #my-div > span > span:first-child
