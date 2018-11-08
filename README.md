@@ -13,7 +13,7 @@ npm install cheerio-get-css-selector
 
 Init the library and pass it your cheerio object:
 ```js
-require('get-unique-selector').init($);
+require('cheerio-get-css-selector').init($);
 ```
 
 Use it as a method of cheerio objects:
@@ -39,7 +39,7 @@ $element.getUniqueSelector();
 
 ```js
 var cheerio = require('cheerio');
-var GetUniqueSelector = require('get-unique-selector');
+var GetUniqueSelector = require('cheerio-get-css-selector');
 
 var $ = cheerio.load('<html><body><div id="my-div"><span><span class="test-class"></span></span></div></body></html>');
 GetUniqueSelector.init($);
